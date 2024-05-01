@@ -1,0 +1,14 @@
+.center-buttons {
+    text-align: center;
+  }
+  
+  .btn-custom {
+    background-color: rgb(5, 5, 57);
+    color: white;
+    /* Add any additional styles you want for the buttons */
+  }
+  
+  /* Optional: Add margin or padding for spacing */
+  .btn {
+    margin: 5px;
+  }

@@ -1,0 +1,69 @@
+<div class="site-section">
+    <a  class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+      <h1 class="m-0 text-primary text-uppercase">SignUp As Owner</h1>
+    </a>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <form [formGroup]="SignUpForm" >
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="firstName" placeholder="firstName">
+              </div>
+              <div *ngIf = "
+              SignUpForm.controls['firstName'].invalid && (SignUpForm.controls['firstName'].dirty|| SignUpForm.controls['firstName'].touched)
+              ">
+                <div *ngIf="SignUpForm.controls['firstName'].errors.required "> First Name is Required</div>
+                <div *ngIf="SignUpForm.controls['firstName'].errors.minlength "> First Name must have at least 3 charc </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="LastName" placeholder="LastName">
+              </div>
+              <div *ngIf = "
+              SignUpForm.controls['LastName'].invalid && (SignUpForm.controls['LastName'].dirty|| SignUpForm.controls['LastName'].touched)
+              ">
+                <div *ngIf="SignUpForm.controls['LastName'].errors.required "> Last Name is Required</div>
+                <div *ngIf="SignUpForm.controls['LastName'].errors.minlength "> Last Name must have at least 3 charc </div>
+              </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                
+                </div>
+                <div *ngIf = "
+                  SignUpForm.controls['email'].invalid && (SignUpForm.controls['email'].dirty|| SignUpForm.controls['email'].touched)
+                  ">
+                  <div *ngIf="SignUpForm.controls['email'].errors.required "> email is Required</div>
+                  <div *ngIf="SignUpForm.controls['email'].errors.email "> form email is required </div>
+                 </div>
+                 <div class="form-group">
+                  <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number">
+                </div>
+                <div *ngIf="SignUpForm.controls['phoneNumber'].invalid && (SignUpForm.controls['phoneNumber'].dirty || SignUpForm.controls['phoneNumber'].touched)">
+                  <div *ngIf="SignUpForm.controls['phoneNumber'].errors.required">Phone Number is Required</div>
+                  <div *ngIf="SignUpForm.controls['phoneNumber'].errors.pattern">Invalid Phone Number Format</div>
+                  <div *ngIf="SignUpForm.controls['phoneNumber'].errors.minlength">Phone Number must have 8 digits</div>
+                  <div *ngIf="SignUpForm.controls['phoneNumber'].errors.maxlength">Phone Number must have 8 digits</div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="pwd" placeholder="password">
+                </div>
+                <div *ngIf = "
+                  SignUpForm.controls['pwd'].invalid && (SignUpForm.controls['pwd'].dirty|| SignUpForm.controls['pwd'].touched)
+                  ">
+                  <div *ngIf="SignUpForm.controls['pwd'].errors.required "> password is Required</div>
+                  <div *ngIf="SignUpForm.controls['pwd'].errors.minlength "> pwd Name must have at least 6 charc </div>
+                </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary py-3 px-5" (click)="SignUp()" [disabled]="SignUpForm.invalid">
+              </div>
+            </form>  
+            <div class="center-buttons">
+              <button class="btn btn-custom  py-3 px-5" (click)="goToClient()">Login as Client</button>
+              <button class="btn btn-custom  py-3 px-5" (click)="goToOwnor()">Login as Owner</button>
+              <button class="btn btn-custom  py-3 px-5" (click)="goToSignupClient()">SignUp as Client</button>
+            </div>
+            
+          </div>
+        
+        </div>
+      </div>
+    </div>

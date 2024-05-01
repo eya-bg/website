@@ -1,0 +1,52 @@
+<div class="container-xxl py-5">
+  <div class="container">
+  <div class="row">
+    <div class="col-12 text-end">
+        <button class="btn btn-primary" (click)="AddNEwRoom()">Add New</button>
+    </div>
+  </div>
+  
+  <div class="row g-2">
+     <div *ngFor="let m of HotelsTab" class="col-lg-6 col-md-6 col-sm-6 mb-3 mb-lg-0 pb-2 pb-md-0 room-item-container wow fadeIn" data-wow-delay="0.3s">
+     <div class="col-lg-9 col-md-10 wow fadeInUp" >
+      <div class="room-item shadow rounded overflow-hidden">
+          <div class="position-relative">
+              <img class="img-fluid" [src]="m.path"   alt="">
+              <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Rooms nbre :{{m.roomsnbre}}</small>
+          </div>
+          <div class="p-4 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+                  <h5 class="mb-0">Hotel name : {{ m.Hname }}</h5>
+                  <div class="ps-2">
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                  </div>
+              </div>
+              <div class="d-flex mb-3">
+                  <small class="border-end me-3 pe-3"><i class="fas fa-table-tennis text-primary me-2"></i> play field</small>
+                  <small class="border-end me-3 pe-3"><i class="fas fa-swimming-pool text-primary me-2"></i> pool</small>
+                  <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+              </div>
+              <p class="text-body mb-3">Adresse :{{m.Hcity}}</p>
+              <p class="text-body mb-3">{{m.description}}</p>
+              <td> 
+                <button class="btn btn-secondary"(click)="goToEditHotels(m.Hid)" >Edit hotel</button>
+                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-success"(click)="goToRooms( m.Hid)" > Rooms </button>
+        
+        
+              </td>
+          </div>
+      </div>
+      
+  </div>
+     </div>
+  </div>
+  </div>
+</div> 
+    
+      
+

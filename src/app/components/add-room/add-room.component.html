@@ -1,0 +1,32 @@
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form #RoomForm="ngForm" (ngSubmit)="addRoom()">
+            <div class="form-group">
+              <input type="number" class="form-control" [(ngModel)]="Room.Rid" name="Rid" placeholder="Room id">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="Room.Hname" name ="Hname" placeholder="Hotel name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="Room.description" name ="description" placeholder="description">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="Room.path" name="path" placeholder="photo url">
+              </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="Room.name" name="name" placeholder="Room name">
+              </div>  
+            <div class="form-group">
+                <input type="number" class="form-control" [(ngModel)]="Room.price" name="price" placeholder="price">
+              </div>   
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="Add Room">
+            </div>
+          </form>  
+        </div>
+        
+      </div>
+    </div>
+</div>

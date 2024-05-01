@@ -1,0 +1,30 @@
+<div class="site-section"> 
+  <a class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+    <h1 class="m-0 text-primary text-uppercase">Login Owner</h1>
+  </a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <form #loginForm="ngForm" (ngSubmit)="loginOwner()">
+          <div class="form-group">
+            <input type="email" class="form-control" [(ngModel)]="owner.email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" [(ngModel)]="owner.pwd" name="pwd" placeholder="Password">
+          </div>
+        
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary py-3 px-5" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </form>  
+        <div class="center-buttons">
+          <button class="btn btn-custom  py-3 px-5" (click)="goToSignupClient()">SignUp as client</button>
+          <button class="btn btn-custom py-3 px-5" (click)="goToClient()">Login as Client</button>
+          <button class="btn btn-custom  py-3 px-5" (click)="goToSignupOwner()">SignUp as Owner</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
